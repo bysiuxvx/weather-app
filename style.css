@@ -37,10 +37,13 @@ div.panel input {
   height: 35%;
   width: 85%;
   top: 60%;
+  outline: none;
+  padding-left: 15px;
+  font-size: 20px;
 }
 
+div.panel input,
 div.panel input::placeholder {
-  padding-left: 15px;
   font-size: 20px;
 }
 
@@ -81,4 +84,8 @@ div.result {
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
+}
+
+div.cityTemp {
+  background-color: royalblue;
 }

@@ -25,6 +25,7 @@ class UI {
   populateUI(data) {
     this.uiContainer.innerHTML = `
     <div class ='cityTemp'>
+    <div class='bgc'></div>
     <h5>${data.name}</h5>
     <h6>${((data.main.temp_max + data.main.temp_min) / 2).toFixed(1)}C.</h6>
     <p>${data.weather[0].description}</p>
