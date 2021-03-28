@@ -3,12 +3,12 @@
   margin: 0;
 }
 
-* body {
+body {
   height: 100vh;
   width: 100vw;
 }
 
-* nav {
+nav {
   width: 100%;
   height: 55px;
   background-color: black;
@@ -16,7 +16,7 @@
   font-size: 30px;
 }
 
-* div.panel {
+div.panel {
   position: relative;
   width: 700px;
   height: 150px;
@@ -27,37 +27,40 @@
   border: 1px solid black;
 }
 
-* div.panel h1 {
+div.panel h1 {
   font-size: 35px;
   text-align: center;
   margin-top: 10px;
 }
 
-* div.panel input {
+div.panel input {
   height: 35%;
   width: 85%;
   top: 60%;
 }
 
-* div.panel input::placeholder {
+div.panel input::placeholder {
   padding-left: 15px;
   font-size: 20px;
 }
 
-* button {
+button {
   top: 35%;
   width: 100px;
   height: 50px;
 }
 
-* div.result {
+div.result {
+  display: flex;
+  justify-content: center;
+  align-content: center;
   width: 35%;
   height: 200px;
   background-color: green;
   top: 55%;
 }
 
-* footer {
+footer {
   position: absolute;
   bottom: 0;
   background-color: gray;
@@ -65,15 +68,17 @@
   width: 100%;
 }
 
-* footer, * nav {
+footer,
+nav {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-* input, * button, * div.result {
+input,
+button,
+div.result {
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
 }
-/*# sourceMappingURL=style.css.map */
