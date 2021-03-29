@@ -24,16 +24,38 @@ class UI {
 
   populateUI(data) {
     this.uiContainer.innerHTML = `
-        <div class ='cityTemp'>
+      <div class ='summaryBig'>
+          <h6>${data.main.temp.toFixed(1)}&degC</h6>
           <h5>${data.name}, ${data.sys.country}</h5>
-          <h6>${((data.main.temp_max + data.main.temp_min) / 2).toFixed(
-            1
-          )}C.</h6>
-          <p>${data.weather[0].description}</p>
+      </div>
+      <div class ='summaryBig'>
           <img class="city-icon" src='https://openweathermap.org/img/wn/${
             data.weather[0]['icon']
           }@2x.png'>
-        </div>`;
+          <p>${data.weather[0].description}</p>
+      </div>
+      <div class='summary'>
+          <div class='summary-item'>
+            <h5>Feels like</h5>
+            <p>${data.main.feels_like.toFixed(1)}&degC</p>
+          </div>
+          <div class='summary-item'>
+            <h5>Humidity</h5>
+            <p>${data.main.humidity}%</p>
+          </div>
+          <div class='summary-item'>
+            <h5>Pressure</h5>
+            <p>${data.main.pressure} hPa</p>
+          </div>
+          <div class='summary-item'>
+            <h5>Min Temp</h5>
+            <p>${data.main.temp_min.toFixed(1)}&degC</p>
+          </div>
+          <div class='summary-item'>
+            <h5>Max Temp</h5>
+            <p>${data.main.temp_max.toFixed(1)}&degC</p>
+          </div>
+      </div>`;
   }
 }
 
@@ -62,16 +84,30 @@ document.querySelector('.searchCity').addEventListener('keydown', (event) => {
 
 const closeBtn = document.querySelector('.modal-close');
 const modalBody = document.querySelector('.modal');
+const divPanel = document.querySelector('.panel');
 
 // modal close by X
 closeBtn.addEventListener('click', () => {
   modalBody.style.display = 'none';
-  console.log('test');
+  divPanel.style.display = 'flex';
+  input.value = '';
 });
 
 // modal target control
 modalBody.addEventListener('click', (event) => {
   if (event.target == modalBody) {
     modalBody.style.display = 'none';
+    divPanel.style.display = 'flex';
+    input.value = '';
   }
+});
+
+// footer links new window
+
+document.querySelector('span.github').addEventListener('click', () => {
+  window.open('https://github.com/bysiuxvx/weather-app', '_blank');
+});
+
+document.querySelector('span.apiLink').addEventListener('click', () => {
+  window.open('https://openweathermap.org/api', '_blank');
 });
