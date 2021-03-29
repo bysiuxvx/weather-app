@@ -17,7 +17,7 @@ div.main-screen {
   top: 40%;
   height: 400px;
   width: 800px;
-  background-color: lime;
+
   justify-content: center;
   align-content: center;
 }
@@ -26,7 +26,6 @@ div.panel {
   display: flex;
   justify-content: center;
   width: 650px;
-  background-color: red;
   border: 1px solid black;
   gap: 10px;
   flex-basis: 65%;
@@ -46,14 +45,18 @@ div.panel input {
   height: 50px;
   width: 80%;
   outline: none;
-  font-size: 35px;
+  font-size: 32px;
+  text-align: center;
+  border: none;
+  border-bottom: 3px solid yellow;
 }
 
-button {
+div.panel .submitBtn {
   width: 55px;
   border: 0;
   border-radius: 50%;
   height: 55px;
+  outline: none;
 }
 
 footer {
@@ -72,11 +75,46 @@ div.cityTemp {
   background-color: royalblue;
 }
 
-div.modal {
-  position: absolute;
-  z-index: 2;
-}
-
 footer img {
   transform: scale(0.2);
+}
+
+div.result-body {
+  position: absolute;
+  z-index: 2;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 350px;
+  width: 650px;
+  background-color: violet;
+}
+
+div.result {
+  position: absolute;
+  height: 80px;
+  width: 100%;
+}
+
+div.result-body .modal-close {
+  right: 0;
+  top: 0;
+  position: absolute;
+  font-size: 30px;
+  border: 0 solid transparent;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  outline: none;
+  z-index: 3;
+}
+
+div.modal {
+  position: absolute;
+  display: none;
+  height: 90%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: brown;
 }
