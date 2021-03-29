@@ -8,13 +8,15 @@
   --footerBgc: rgb(77, 76, 76);
   --orangeMain: rgb(255, 154, 1, 1);
   --hover: rgb(138, 153, 0);
-  --result: rgb(247, 240, 240);
+  --footerWhite: rgb(247, 240, 240);
+  --result: rgb(217, 228, 207);
 }
 
 body {
   height: 100vh;
   width: 100vw;
   background-color: var(--bgcLight);
+  overflow: hidden;
 }
 
 div.main-screen {
@@ -25,7 +27,6 @@ div.main-screen {
   left: 50%;
   top: 40%;
   height: 400px;
-  width: 800px;
   justify-content: center;
   align-content: center;
   font-family: 'Open Sans', sans-serif;
@@ -52,13 +53,13 @@ div.main-screen h1 {
 
 div.panel input {
   height: 50px;
-  width: 80%;
+  width: 450px;
   outline: none;
   font-size: 32px;
   text-align: center;
   border: none;
   border-bottom: 2.5px solid var(--footerBgc);
-  transition: 0.5s;
+  transition: 0.8s;
   background-color: var(--bgcLight);
   margin-left: 50px;
 }
@@ -76,7 +77,8 @@ div.panel .submitBtn {
   font-size: 18px;
   background-color: var(--orangeMain);
   color: var(--bgcLight);
-  transition: 0.5s;
+  transition: 0.8s;
+  cursor: pointer;
 }
 
 div.panel .submitBtn:hover {
@@ -101,17 +103,17 @@ div.result {
   width: 100%;
   justify-content: center;
   align-items: center;
-  gap: 50px;
   font-family: 'Open Sans', sans-serif;
   flex-wrap: wrap;
-  background-color: rgb(217, 228, 207);
+  background-color: var(--result);
   border-radius: 45px;
   box-shadow: 0 0 10px var(--footerBgc);
+  color: var(--footerBgc);
 }
 
 div.result div.summaryBig {
   box-sizing: content-box;
-  flex: 2;
+  flex: 1;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -120,13 +122,11 @@ div.result div.summaryBig {
 }
 
 div.result div.summaryBig:nth-of-type(1) {
-  padding-left: 50px;
   padding-right: 15px;
 }
 
 div.result div.summaryBig:nth-of-type(2) {
   border-left: 2px solid black;
-  padding-right: 50px;
   padding-left: 20px;
 }
 
@@ -195,7 +195,8 @@ div.result-body .modal-close {
   outline: none;
   z-index: 3;
   background-color: var(--orangeMain);
-  transition: 0.5s;
+  transition: 0.8s;
+  cursor: pointer;
 }
 
 div.result-body .modal-close:hover {
@@ -204,12 +205,10 @@ div.result-body .modal-close:hover {
 
 div.modal {
   position: absolute;
-  display: none;
   height: 90%;
   top: 0;
   left: 0;
   width: 100%;
-  transition: 0.6s;
 }
 
 footer {
@@ -230,10 +229,10 @@ footer span {
   flex-grow: 1;
   flex-basis: 75%;
   text-align: center;
-  color: var(--bgcLight);
+  color: var(--footerWhite);
   font-family: 'Open Sans', sans-serif;
   font-size: 25px;
-  transition: 0.5s;
+  transition: 0.8s;
 }
 
 footer p span {
@@ -244,8 +243,310 @@ footer p span:hover {
   color: var(--hover);
 }
 
-footer p:nth-of-type(1) {
-}
 footer p:nth-of-type(2) {
   margin-top: -25px;
 }
+
+.hideModal {
+  z-index: -1;
+  opacity: 0;
+  transform: scale(0);
+  display: block;
+
+  animation: hide 0.25s;
+}
+
+.showModal {
+  display: block;
+  z-index: 1;
+  opacity: 1;
+  transform: scale(1);
+
+  animation: show 0.25s;
+}
+
+@keyframes hide {
+  from {
+    display: block;
+    z-index: 1;
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    z-index: -1;
+    transform: scale(0);
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes show {
+  from {
+    display: none;
+    z-index: -1;
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    display: block;
+    z-index: 1;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* media */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  div.result-body {
+    width: 70%;
+  }
+
+  div.summaryBig h6 {
+    font-size: 45px;
+    margin-bottom: 20px;
+  }
+
+  div.summaryBig h5,
+  div.summaryBig p {
+    font-size: 25px;
+  }
+
+  div.summaryBig img.city-icon {
+    transform: scale(1);
+  }
+
+  div.summary-item h5,
+  div.summary-item p {
+    font-size: 17px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 767px) and (orientation: portrait) {
+  div.result-body {
+    width: 400px;
+  }
+  div.panel {
+    width: 200px;
+  }
+
+  div.summaryBig h6 {
+    font-size: 25px;
+    margin-bottom: 45px;
+  }
+
+  div.summaryBig h5,
+  div.summaryBig p {
+    font-size: 20px;
+  }
+
+  div.summaryBig img.city-icon {
+    transform: scale(0.9);
+  }
+
+  div.summary-item h5,
+  div.summary-item p {
+    font-size: 14px;
+  }
+  footer p {
+    font-size: 18px;
+  }
+  footer span {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  div.result-body {
+    width: 550px;
+    height: 250px;
+  }
+  div.main-screen h1 {
+    font-size: 25px;
+  }
+
+  div.panel {
+    width: 300px;
+  }
+  div.panel input.searchCity {
+    width: 250px;
+    font-size: 20px;
+  }
+  div.summaryBig h5 {
+    font-size: 25px;
+    margin-top: 28px;
+  }
+
+  div.summaryBig h6 {
+    font-size: 35px;
+  }
+
+  div.summaryBig p {
+    font-size: 25px;
+  }
+  div.summary-item h5 {
+    font-size: 18px;
+  }
+  div.summary-item p {
+    font-size: 18px;
+  }
+  footer {
+    height: 70px;
+  }
+  footer p {
+    font-size: 15px;
+  }
+  footer span {
+    font-size: 15px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) and (orientation: landscape) {
+  div.result-body {
+    width: 550px;
+    height: 350px;
+  }
+  div.panel input.searchCity {
+    width: 250px;
+  }
+  div.main-screen h1 {
+    font-size: 35px;
+  }
+  div.summaryBig h5,
+  div.summaryBig p {
+    font-size: 20px;
+  }
+  div.summary-item h5,
+  div.summary-item p {
+    font-size: 20px;
+  }
+  footer {
+    height: 80px;
+  }
+  footer p {
+    font-size: 18px;
+  }
+  footer span {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 375px) and (max-width: 480px) and (orientation: portrait) {
+  div.result-body {
+    width: 370px;
+    height: 350px;
+  }
+
+  div.panel {
+    width: 375px;
+  }
+
+  div.panel input.searchCity {
+    width: 80%;
+  }
+  div.main-screen h1 {
+    font-size: 35px;
+  }
+
+  div.summaryBig h6 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  div.summaryBig h5,
+  div.summaryBig p {
+    font-size: 20px;
+  }
+  div.summaryBig p {
+    margin-top: -11px;
+  }
+  div.summaryBig img.city-icon {
+    transform: scale(1);
+  }
+  div.summary-item h5,
+  div.summary-item p {
+    font-size: 13px;
+  }
+
+  footer {
+    height: 80px;
+  }
+  footer p {
+    font-size: 15px;
+  }
+  footer span {
+    font-size: 15px;
+  }
+}
+
+@media all and (min-width: 375px) and (max-width: 480px) and (orientation: landscape) {
+  footer {
+    height: 60px;
+  }
+  footer p {
+    font-size: 15px;
+  }
+  footer span {
+    font-size: 15px;
+  }
+}
+
+/* div.result {
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  flex-wrap: wrap;
+  background-color: var(--result);
+  border-radius: 45px;
+  box-shadow: 0 0 10px var(--footerBgc);
+  color: var(--footerBgc);
+}
+
+div.result div.summaryBig {
+  box-sizing: content-box;
+  flex: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.result div.summaryBig:nth-of-type(1) {
+  padding-left: 50px;
+  padding-right: 15px;
+}
+
+div.result div.summaryBig:nth-of-type(2) {
+  border-left: 2px solid black;
+  padding-right: 50px;
+  padding-left: 20px;
+}
+
+div.summaryBig h6 {
+  font-size: 60px;
+  padding-top: 15px;
+}
+
+div.summaryBig h5 {
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  padding-top: 3px;
+  font-weight: normal;
+}
+
+div.summaryBig p {
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  font-weight: lighter;
+}
+
+div.summaryBig img.city-icon {
+  transform: scale(1.4);
+} */

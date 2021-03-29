@@ -65,12 +65,14 @@ const updateUI = new UI();
 const input = document.querySelector('.searchCity');
 const submitBtn = document.querySelector('.submitBtn');
 
+// exectute by submit button
 const executeSearch = () => {
   const currentValue = input.value;
   fetchData.getLocation(currentValue).then((data) => {
     updateUI.populateUI(data);
   });
-  document.querySelector('.modal').style.display = 'block';
+  modalBody.classList.add('showModal');
+  modalBody.classList.remove('hideModal');
 };
 
 submitBtn.addEventListener('click', executeSearch);
@@ -88,16 +90,16 @@ const divPanel = document.querySelector('.panel');
 
 // modal close by X
 closeBtn.addEventListener('click', () => {
-  modalBody.style.display = 'none';
-  divPanel.style.display = 'flex';
+  modalBody.classList.add('hideModal');
+  modalBody.classList.remove('showModal');
   input.value = '';
 });
 
 // modal target control
 modalBody.addEventListener('click', (event) => {
   if (event.target == modalBody) {
-    modalBody.style.display = 'none';
-    divPanel.style.display = 'flex';
+    modalBody.classList.add('hideModal');
+    modalBody.classList.remove('showModal');
     input.value = '';
   }
 });
