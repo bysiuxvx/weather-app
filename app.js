@@ -25,10 +25,13 @@ class UI {
   populateUI(data) {
     this.uiContainer.innerHTML = `
     <div class ='cityTemp'>
-    <div class='bgc'></div>
-    <h5>${data.name}</h5>
-    <h6>${((data.main.temp_max + data.main.temp_min) / 2).toFixed(1)}C.</h6>
-    <p>${data.weather[0].description}</p>
+      <div class='bgc'></div>
+      <h5>${data.name}, ${data.sys.country}</h5>
+      <h6>${((data.main.temp_max + data.main.temp_min) / 2).toFixed(1)}C.</h6>
+      <p>${data.weather[0].description}</p>
+      <img class="city-icon" src='https://openweathermap.org/img/wn/${
+        data.weather[0]['icon']
+      }@2x.png'>
     </div>`;
   }
 }
@@ -39,10 +42,16 @@ const updateUI = new UI();
 const input = document.querySelector('.searchCity');
 const submitBtn = document.querySelector('.submitBtn');
 
-submitBtn.addEventListener('click', () => {
+const executeSearch = () => {
   const currentValue = input.value;
-
   fetchData.getLocation(currentValue).then((data) => {
     updateUI.populateUI(data);
   });
+};
+
+document.querySelector('.searchCity').addEventListener('keydown', (event) => {
+  if (event.keyCode == 13) {
+    executeSearch();
+  } else return;
 });
+submitBtn.addEventListener('click', executeSearch);
