@@ -68,11 +68,15 @@ const submitBtn = document.querySelector('.submitBtn');
 // exectute by submit button
 const executeSearch = () => {
   const currentValue = input.value;
-  fetchData.getLocation(currentValue).then((data) => {
-    updateUI.populateUI(data);
-  });
-  modalBody.classList.add('showModal');
-  modalBody.classList.remove('hideModal');
+  if (!currentValue) {
+    alert('You need to enter a valid location!');
+  } else {
+    fetchData.getLocation(currentValue).then((data) => {
+      updateUI.populateUI(data);
+    });
+    modalBody.classList.add('showModal');
+    modalBody.classList.remove('hideModal');
+  }
 };
 
 submitBtn.addEventListener('click', executeSearch);
