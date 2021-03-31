@@ -19,4 +19,4 @@
 
 #Demo
 
-    <https://bysiuxvx.github.io/weather-app/>
+   [Live demo of the app](https://bysiuxvx.github.io/weather-app/)
