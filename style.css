@@ -68,6 +68,10 @@ div.panel input:focus {
   border-bottom: 2.5px solid var(--orangeMain);
 }
 
+/* V hide input placeholder when focus */
+div.panel input:focus::-moz-placeholder {
+  color: transparent;
+}
 div.panel input:focus::-webkit-input-placeholder {
   opacity: 0;
 }
