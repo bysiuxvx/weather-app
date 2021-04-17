@@ -32,6 +32,15 @@ div.main-screen {
   font-family: 'Open Sans', sans-serif;
 }
 
+div.main-screen h1 {
+  text-align: center;
+  justify-content: center;
+  font-size: 35px;
+  flex-basis: 65%;
+  margin-bottom: 20px;
+  color: var(--footerBgc);
+}
+
 div.panel {
   display: flex;
   justify-content: center;
@@ -40,15 +49,6 @@ div.panel {
   flex-basis: 65%;
   height: 100px;
   align-items: center;
-}
-
-div.main-screen h1 {
-  text-align: center;
-  justify-content: center;
-  font-size: 35px;
-  flex-basis: 65%;
-  margin-bottom: 20px;
-  color: var(--footerBgc);
 }
 
 div.panel input {
