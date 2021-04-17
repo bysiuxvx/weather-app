@@ -25,8 +25,8 @@ class UI {
   populateUI(data) {
     this.uiContainer.innerHTML = `
       <div class ='summaryBig'>
-          <h6>${data.main.temp.toFixed(1)}&degC</h6>
-          <h5>${data.name}, ${data.sys.country}</h5>
+          <h2>${data.main.temp.toFixed(1)}&degC</h2>
+          <h3>${data.name}, ${data.sys.country}</h3>
       </div>
       <div class ='summaryBig'>
           <img class="city-icon" src='https://openweathermap.org/img/wn/${
@@ -36,23 +36,23 @@ class UI {
       </div>
       <div class='summary'>
           <div class='summary-item'>
-            <h5>Feels like</h5>
+            <h3>Feels like</h3>
             <p>${data.main.feels_like.toFixed(1)}&degC</p>
           </div>
           <div class='summary-item'>
-            <h5>Humidity</h5>
+            <h3>Humidity</h3>
             <p>${data.main.humidity}%</p>
           </div>
           <div class='summary-item'>
-            <h5>Pressure</h5>
+            <h3>Pressure</h3>
             <p>${data.main.pressure} hPa</p>
           </div>
           <div class='summary-item'>
-            <h5>Min Temp</h5>
+            <h3>Min Temp</h3>
             <p>${data.main.temp_min.toFixed(1)}&degC</p>
           </div>
           <div class='summary-item'>
-            <h5>Max Temp</h5>
+            <h3>Max Temp</h3>
             <p>${data.main.temp_max.toFixed(1)}&degC</p>
           </div>
       </div>`;

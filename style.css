@@ -139,12 +139,12 @@ div.result div.summaryBig:nth-of-type(2) {
   padding-left: 20px;
 }
 
-div.summaryBig h6 {
+div.summaryBig h2 {
   font-size: 60px;
   padding-top: 15px;
 }
 
-div.summaryBig h5 {
+div.summaryBig h3 {
   display: flex;
   justify-content: center;
   font-size: 35px;
@@ -172,7 +172,7 @@ div.result div.summary {
   height: 55px;
 }
 
-div.summary h5 {
+div.summary h3 {
   font-size: 24px;
   flex-basis: 60%;
   margin-bottom: -10px;
@@ -324,12 +324,12 @@ footer p:nth-of-type(2) {
     width: 70%;
   }
 
-  div.summaryBig h6 {
+  div.summaryBig h2 {
     font-size: 45px;
     margin-bottom: 20px;
   }
 
-  div.summaryBig h5,
+  div.summaryBig h3,
   div.summaryBig p {
     font-size: 25px;
   }
@@ -338,7 +338,7 @@ footer p:nth-of-type(2) {
     transform: scale(1);
   }
 
-  div.summary-item h5,
+  div.summary-item h3,
   div.summary-item p {
     font-size: 17px;
   }
@@ -352,12 +352,12 @@ footer p:nth-of-type(2) {
     width: 200px;
   }
 
-  div.summaryBig h6 {
+  div.summaryBig h2 {
     font-size: 25px;
     margin-bottom: 45px;
   }
 
-  div.summaryBig h5,
+  div.summaryBig h3,
   div.summaryBig p {
     font-size: 20px;
   }
@@ -366,7 +366,7 @@ footer p:nth-of-type(2) {
     transform: scale(0.9);
   }
 
-  div.summary-item h5,
+  div.summary-item h3,
   div.summary-item p {
     font-size: 14px;
   }
@@ -394,19 +394,19 @@ footer p:nth-of-type(2) {
     width: 250px;
     font-size: 20px;
   }
-  div.summaryBig h5 {
+  div.summaryBig h3 {
     font-size: 25px;
     margin-top: 28px;
   }
 
-  div.summaryBig h6 {
+  div.summaryBig h2 {
     font-size: 35px;
   }
 
   div.summaryBig p {
     font-size: 25px;
   }
-  div.summary-item h5 {
+  div.summary-item h3 {
     font-size: 18px;
   }
   div.summary-item p {
@@ -434,11 +434,11 @@ footer p:nth-of-type(2) {
   div.main-screen h1 {
     font-size: 35px;
   }
-  div.summaryBig h5,
+  div.summaryBig h3,
   div.summaryBig p {
     font-size: 20px;
   }
-  div.summary-item h5,
+  div.summary-item h3,
   div.summary-item p {
     font-size: 20px;
   }
@@ -470,12 +470,12 @@ footer p:nth-of-type(2) {
     font-size: 35px;
   }
 
-  div.summaryBig h6 {
+  div.summaryBig h2 {
     font-size: 30px;
     margin-bottom: 30px;
   }
 
-  div.summaryBig h5,
+  div.summaryBig h3,
   div.summaryBig p {
     font-size: 20px;
   }
@@ -485,7 +485,7 @@ footer p:nth-of-type(2) {
   div.summaryBig img.city-icon {
     transform: scale(1);
   }
-  div.summary-item h5,
+  div.summary-item h3,
   div.summary-item p {
     font-size: 13px;
   }
