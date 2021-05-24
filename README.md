@@ -3,7 +3,7 @@
 Simple weather app project
 
 I think it's finished for now. I want to focus on some other projects,
-maybe I will update the weather icon with some SVG animation when I'm in the mood.
+maybe I will update the weather icon with some SVG animation in the future.
 
 ## Technologies used
 
