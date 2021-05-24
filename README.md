@@ -14,8 +14,8 @@ maybe I will update the weather icon with some SVG animation when I'm in the moo
 
 ## Things I learned
 
-    First time I used the async / wait syntax
-    Learned new things about working with APIs
+First time I used the async / wait syntax
+Learned new things about working with APIs
 
 ## Demo
 
